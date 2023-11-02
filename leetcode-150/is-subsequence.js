@@ -25,19 +25,11 @@ s and t consist only of lowercase English letters.
 
 const isSubsequence = (s, t) => {
   if (s.length > t.length) return false;
+
   let sIdx = 0;
-  let tIdx = 0;
-
-  while (sIdx < s.length) {
-    if (s[sIdx] === t[tIdx]) {
-      sIdx++;
-      tIdx++;
-    } else {
-      tIdx++;
-    }
-
-    if (tIdx >= t.length && sIdx !== s.length) return false;
+  for (let i = 0; i < t.length; i++) {
+    if (s[sIdx] === t[i]) sIdx++;
   }
 
-  return true;
+  return sIdx === s.length;
 };
