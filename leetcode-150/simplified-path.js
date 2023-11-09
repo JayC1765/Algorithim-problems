@@ -32,3 +32,20 @@ Input: path = "/home//foo/"
 Output: "/home/foo"
 Explanation: In the canonical path, multiple consecutive slashes are replaced by a single one.
 */
+
+const simplifyPath = (path) => {
+  const pathSplit = path.split("/");
+  const stack = [];
+
+  for (const dir of pathSplit) {
+    if (dir === "." || dir === "") {
+      continue;
+    } else if (dir === "..") {
+      if (stack.length) stack.pop();
+    } else {
+      stack.push(dir);
+    }
+  }
+
+  return "/" + stack.join("/");
+};
