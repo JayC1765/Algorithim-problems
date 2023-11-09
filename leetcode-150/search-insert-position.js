@@ -18,3 +18,20 @@ Example 3:
 Input: nums = [1,3,5,6], target = 7
 Output: 4
 */
+
+const searchInsert = (nums, target) => {
+  let left = 0;
+  let right = nums.length;
+
+  while (left < right) {
+    const mid = Math.floor((left + right) / 2);
+
+    if (target > nums[mid]) {
+      left = mid + 1;
+    } else {
+      right = mid;
+    }
+  }
+
+  return left;
+};
