@@ -23,7 +23,7 @@ Output: "/home"
 Explanation: Note that there is no trailing slash after the last directory name.
 Example 2:
 
-Input: path = "/../"
+Inpu con t: path = "/../"
 Output: "/"
 Explanation: Going one level up from the root directory is a no-op, as the root level is the highest level you can go.
 Example 3:
