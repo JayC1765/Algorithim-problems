@@ -20,3 +20,19 @@ Explanation:
 rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
 */
+
+const rotate = (nums, k) => {
+  k = k % nums.length;
+
+  nums.reverse();
+  reverseArr(nums, 0, k - 1);
+  reverseArr(nums, k, nums.length - 1);
+};
+
+const reverseArr = (arr, start, end) => {
+  while (start < end) {
+    [arr[start], arr[end]] = [arr[end], arr[start]];
+    start++;
+    end--;
+  }
+};
