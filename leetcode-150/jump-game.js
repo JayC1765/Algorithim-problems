@@ -16,3 +16,15 @@ Input: nums = [3,2,1,0,4]
 Output: false
 Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
 */
+
+const canJump = (nums) => {
+  let goal = nums.length - 1;
+
+  for (let i = nums.length - 2; i >= 0; i--) {
+    if (nums[i] + i > goal) {
+      goal = i;
+    }
+  }
+
+  return goal === 0;
+};
